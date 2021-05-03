@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yo como BARF</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="https://cdn.vuetifyjs.com/images/logos/favicon.ico">
+</head>
+<body>
+<div id="app">
+  <v-app>
+    <v-app-bar
+      app
+      color="white"
+      height="100"
+    >
+      <v-avatar
+        class="mr-3"
+        color="grey lighten-5"
+        size="70"
+      >
+        <v-img
+          contain
+          max-height="30%"
+          src="./img/BARF.jpg"
+        ></v-img>
+      </v-avatar>
+
+      <v-toolbar-title class="font-weight-black headline">
+        Yo Como BARF
+      </v-toolbar-title>
+    </v-app-bar>
+
+    <v-content>
+      <section id="hero">
+        <v-row no-gutters>
+          <v-img
+            :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
+          src="./img/DogCocinero.jpg"
+          >
+            <v-theme-provider dark>
+              <v-container fill-height>
+                <v-row
+                  align="center"
+                  class="white--text mx-auto"
+                  justify="center"
+                >
+                  <v-col
+                    class="white--text text-center"
+                    cols="12"
+                    tag="h1"
+                  >
+                    <span
+                    :class="[$vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2']"
+                      class="font-weight-light"
+                    >
+                      Bienvenido a
+                    </span>
+
+                    <br>
+
+                    <span
+                      :class="[$vuetify.breakpoint.smAndDown ? 'display-3': 'display-4']"
+                      class="font-weight-black"
+                    >
+                      Yo Como BARF
+                    </span>
+
+                  </v-col>
+
+                  <v-btn
+                    class="align-self-end"
+                    fab
+                    outlined
+                    @click="$vuetify.goTo('#about-me')"
+                  >
+                    <v-icon>mdi-chevron-double-down</v-icon>
+                  </v-btn>
+                </v-row>
+              </v-container>
+            </v-theme-provider>
+          </v-img>
+        </v-row>
+      </section>
+
+      <section id="about-me">
+        <div class="py-12"></div>
+
+        <v-container class="text-center">
+          <h2 class="display-2 font-weight-bold mb-3">Acerca de mí.</h2>
+
+          <v-responsive
+            class="mx-auto mb-8"
+            width="56"
+          >
+            <v-divider class="mb-1"></v-divider>
+
+            <v-divider></v-divider>
+          </v-responsive>
+
+          <v-responsive
+            class="mx-auto title font-weight-light mb-8"
+            max-width="720"
+          >
+            Soy un cachorro que ha decidido comer sano, mediante una alimentacion cruda, usando los principios evolutivos. Esta dieta fue propuesta por el Dr. IAN BILLINGHURST, a quien denominó BARF - Biologically Appropriate Raw Food.
+          </v-responsive>
+
+          <v-avatar
+            class="elevation-12 mb-12"
+            size="128"
+          >
+            <v-img src="./img/Bobtail.jpg"></v-img>
+          </v-avatar>
+
+          <div></div>
+
+          <v-btn
+            color="grey"
+            href="#"
+            outlined
+            large
+          >
+            <span class="grey--text text--darken-1 font-weight-bold">
+              Conocer mas sobre BARF
+            </span>
+          </v-btn>
+        </v-container>
+
+        <div class="py-12"></div>
+      </section>
+
+      <section
+        id="features"
+        class="grey lighten-3"
+      >
+        <div class="py-12"></div>
+
+        <v-container class="text-center">
+          <h2 class="display-2 font-weight-bold mb-3">Caracteristicas del alimento "Yo como BARF"</h2>
+
+          <v-responsive
+            class="mx-auto mb-12"
+            width="56"
+          >
+            <v-divider class="mb-1"></v-divider>
+
+            <v-divider></v-divider>
+          </v-responsive>
+
+          <v-row>
+            <v-col
+              v-for="({ icon, title, text }, i) in features"
+              :key="i"
+              cols="12"
+              md="4"
+            >
+              <v-card
+                class="py-12 px-4"
+                color="grey lighten-5"
+                flat
+              >
+                <v-theme-provider dark>
+                  <div>
+                    <v-avatar
+                      color="primary"
+                      size="88"
+                    >
+                      <v-icon
+                        large
+                        v-text="icon"
+                      ></v-icon>
+                    </v-avatar>
+                  </div>
+                </v-theme-provider>
+
+                <v-card-title
+                  class="justify-center font-weight-black text-uppercase"
+                  v-text="title"
+                ></v-card-title>
+
+                <v-card-text
+                  class="subtitle-1"
+                  v-text="text"
+                >
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+
+        <div class="py-12"></div>
+      </section>
+
+      <section id="stats">
+        <v-parallax
+          :height="$vuetify.breakpoint.smAndDown ? 700 : 500"
+          src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+        >
+          <v-container fill-height>
+            <v-row class="mx-auto">
+              <v-col
+                v-for="[value, title] of stats"
+                :key="title"
+                cols="12"
+                md="3"
+              >
+                <div class="text-center">
+                  <div
+                    class="display-3 font-weight-black mb-4"
+                    v-text="value"
+                  ></div>
+
+                  <div
+                    class="title font-weight-regular text-uppercase"
+                    v-text="title"
+                  ></div>
+                </div>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-parallax>
+      </section>
+
+      <section id="blog">
+        <div class="py-12"></div>
+
+        <v-container>
+          <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Blog</h2>
+
+          <v-responsive
+            class="mx-auto mb-12"
+            width="56"
+          >
+            <v-divider class="mb-1"></v-divider>
+
+            <v-divider></v-divider>
+          </v-responsive>
+
+          <v-row>
+            <v-col
+              v-for="({ src, text, title }, i) in articles"
+              :key="i"
+              cols="12"
+              md="4"
+            >
+              <v-img
+                :src="src"
+                class="mb-4"
+                height="275"
+                max-width="100%"
+              ></v-img>
+
+              <h3
+                class="font-weight-black mb-4 text-uppercase"
+                v-text="title"
+              ></h3>
+
+              <div
+                class="title font-weight-light mb-5"
+                v-text="text"
+              ></div>
+
+              <v-btn
+                class="ml-n4 font-weight-black"
+                text
+              >
+                Continuar
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-container>
+
+        <div class="py-12"></div>
+      </section>
+
+      <section id="OnLineStore">
+        <v-parallax
+          :height="$vuetify.breakpoint.smAndDown ? 700 : 900"
+          src="./img/IrALaTienda.jpg"
+        >
+          <v-container fill-height>
+            <v-row class="mx-auto">
+              <v-col>
+                <a href="http://store.dimemex.site/presta17/" target="_blank">
+                  <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Ir a la tienda</h2>
+                </a>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-parallax>
+      </section>
+
+
+      <v-sheet
+        id="contact"
+        color="#333333"
+        dark
+        tag="section"
+        tile
+      >
+        <div class="py-12"></div>
+
+        <v-container>
+          <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Informes y Ventas</h2>
+
+          <v-responsive
+            class="mx-auto mb-12"
+            width="56"
+          >
+            <v-divider class="mb-1"></v-divider>
+
+            <v-divider></v-divider>
+          </v-responsive>
+
+          <v-theme-provider light>
+            <v-row>
+              <v-col cols="12">
+                <v-text-field
+                  flat
+                  label="Nombre*"
+                  solo
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12">
+                <v-text-field
+                  flat
+                  label="Correo*"
+                  solo
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12">
+                <v-text-field
+                  flat
+                  label="Asunto*"
+                  solo
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12">
+                <v-textarea
+                  flat
+                  label="Mensaje*"
+                  solo
+                ></v-textarea>
+              </v-col>
+
+              <v-col
+                class="mx-auto"
+                cols="auto"
+              >
+                <v-btn
+                  color="accent"
+                  x-large
+                >
+                  Enviar
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-theme-provider>
+        </v-container>
+
+        <div class="py-12"></div>
+      </v-sheet>
+    </v-content>
+
+    <v-footer
+      class="justify-center"
+      color="#292929"
+      height="100"
+    >
+      <div class="title font-weight-light grey--text text--lighten-1 text-center">
+        &copy; {{ (new Date()).getFullYear() }} — Yo Como BARF
+      </div>
+    </v-footer>
+  </v-app>
+ </div>
+ <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+ <script>
+  new Vue({
+    el: '#app',
+    vuetify: new Vuetify(),
+    data () {
+      return {
+        articles: [
+          {
+            src: './img/PerroAgresivo.jpg',
+            title: '¡Mejoras en el comportamiento!',
+            text: 'Los perros alimentados con BARF son muchos más tranquilos, su entrenamiento es más fácil y son menos propensos a comportamientos erráticos e impredecibles. Muchos adiestradores y especialistas en comportamiento se niegan a trabajar con perros que no hayan cambiado su alimentación a una dieta de alimento completamente crudo. Por lo general, las mascotas alimentadas con alimento artificial muestran conductas semejantes a las que muestran los niños con el trastorno por déficit de atención e hiperactividad. Cuando estas mascotas cambian a la dieta BARF, se observa una mejora del carácter en pocos días. Hoy en día hay muchos perros que siguen vivos y viven felices con sus familias, pero que anteriormente han estado en el “corredor de la muerte” debido a patrones de comportamiento agresivos y peligrosamente impredecibles. Las vidas de estos perros se salvaron gracias a la positiva transformación que sufrieron cuando empezaron con la dieta BARF.',
+          },
+          {
+            src: './img/DogSick.jpg',
+            title: 'Reducción del impacto de varias enfermedades degenerativas',
+            text: 'Las mascotas que se alimentan con una dieta evolutiva viven mucho más y tienen menos posibilidades de desarrollar cáncer o cualquier enfermedad degenerativa que sus homólogos alimentados con croquetas. Los dueños de mascotas que cambian a sus mascotas mayores a BARF observan con frecuencia que, de forma repentina, cualquier enfermedad degenerativa que haya afectado a su mascota pasa a ser menos problemática. Este resultado ha sido una constante a lo largo de los años. Si los dueños están preparados para modificar aún más la dieta BARF de forma que la adapten a la patología concreta que aflige a su mascota, el beneficio puede ser aún mayor. Esta buena noticia puede aplicarse al tratamiento de muchos tipos de cáncer. A lo largo de los años, la dieta BARF ha conseguido con gran éxito las remisión de muchos tumores, entre ellos la mastocitosis, los tumores mamarios y linfomas. No dudo que con el paso del tiempo, a medida que más dueños de mascotas vayan adoptando la dieta BARF para sus mascotas con cáncer, se registrarán remisiones de una gama más amplia de tumores.',
+          },
+          {
+            src: './img/DogEatingBarf.jpg',
+            title: 'EL CAMBIO A BARF',
+            text: 'Esta es la forma más sencilla de realizar el cambio. ¡Usted simplemente lo lleva a cabo! Póngase en la siguiente situación: imagine que ayer usted ofreció croquetas, alimento enlatado, alimento casero cocido o cualquier otro producto a su mascota, y hoy comienza a alimentarlo con la dieta BARF. Antes de hacer el cambio rápido, es necesario tener en cuenta si su mascota puede adaptarse al cambio de dieta rápidamente. También necesita decidir qué alimentos va a escoger para lograr una máxima aceptación y una mínima tendencia a trastornos gastrointestinales. La experiencia y el consenso general nos dicen que el cambio rápido es el método preferible, el más sencillo, el que menos problemas causa y el más exitoso con los perros, especialmente los perros jóvenes y sanos con una sistema gastrointestinal relativamente normal. Por otro lado, el cambio rápido únicamente funciona con una cantidad limitada de gatos. Esto se debe principalmente a que la inmensa mayoría de los gatos adultos requiere mucha persuasión antes de que acepten cualquier cambio de dieta, incluyendo un cambio a BARF. Sin embargo, cada mascota y cada dueño son diferentes. Usted conoce mejor a su mascota y su situación, y al final, la elección de cómo hacer el cambio es únicamente suya. A veces no se recomienda el cambio rápido en mascotas mayores con problemas en el sistema digestivo o inmune. Sin embargo, esto no es una regla inquebrantable, es únicamente una directriz. Su mascota puede mostrarle otras formas diferentes. El cambio puede ser en gran medida un camino que hacemos a medida que andamos. Muchas mascotas mayores que se han alimentado con pienso durante toda su vida (y algunas más jóvenes) no toleran la comida cruda y el pienso, todo junto en su tracto digestivo. Esa combinación puede producir diarrea, vómitos o ambos. En este caso no tenemos opción, debemos optar por el cambio rápido.',
+          },
+        ],
+        features: [
+          {
+            icon: 'mdi-account-group-outline',
+            title: 'Comunidad vibrante',
+            text: 'Cada vez somos más a quienes nuestros cuidadores desean lo mejor para nosotros, nuestra calidad de vida se vé gratamente acogedora con los cuidados que nos dan día a día.',
+          },
+          {
+            icon: 'mdi-update',
+            title: 'Salud de inmediato',
+            text: 'La dieta basada en alimentos naturales nos proporciona mayor energía, tomamos menos agua, nuestro pelaje mejora y dejamos de ser flatulentos. Nuestra estabilidad emocional mejora y aunque comemos menos, nuestros desechos son muy manejables.',
+          },
+          {
+            icon: 'mdi-shield-outline',
+            title: 'Salud a largo plazo',
+            text: 'Quienes comen en base a la dieta BARF han conseguido los siguientes beneficios; Aumento en su energia, Aumento en la masa muscular, Desaparicon en la mayoria de los problemas dentales, Desaparicion de los problemas dérmicos , Recuperacion de los oidos infectados, Desaparicion de los problemas de los sacos anales, Desaparicion de la artritis, Desaparicion de la incontinencia, Mejora del equilibrio hídrico, Desaparcion del sindrome del Ojo Seco, Aumento de la resistencia de parásitos internos y externos, y un largo etc...',
+          },
+        ],
+        stats: [
+          ['500', 'Mascotas comiendo BARF cada año en México'],
+          ['25% ', 'Ahorro sobre alimentos industrializados'],
+          ['40%', 'Menos mascotas con riesgo a padecer cancer'],
+          ['90%', 'Mascotas libres de problemas dentales'],
+        ],
+      }
+    }
+  })
+</script>
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.3.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.3.2/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+</html>
